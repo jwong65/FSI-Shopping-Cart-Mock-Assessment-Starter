@@ -8,13 +8,9 @@ let removebutton = document.querySelector(".remove")
 let count = 1
 let price = 0
 
-function updateText(price)
+function updateQuantityText(count, price)
 {
-    totalp.textContent ="Total Price available at checkout:" +String(price)
-}
-
-function updateQuantityText(count)
-{
+    totalp.textContent ="Total Price available at checkout:" + String(price)
     totalq.textContent = "Quantity: "+ String(count)
 }
 
@@ -32,12 +28,8 @@ button1.addEventListener('click', function()
         count++
         price= count*15
     }
-    console.log("+ button was clicked")
-    console.log(count)
-    console.log(price)
-    updateQuantityText(count)
+    updateQuantityText(count, price)
     //let totalq =("Quantity :", count)
-    updateText(price)
 }
 )
 
@@ -47,12 +39,8 @@ button2.addEventListener('click', function()
         count--
         price = count*15
     }
-    console.log("- button was clicked")
-    console.log(count)
-    console.log(price)
-    updateQuantityText(count)
-    //let totalq =("Quantity :", count)
-    updateText(price)   
+    updateQuantityText(count, price)
+    //let totalq =("Quantity :", count) 
 }
 )
 
